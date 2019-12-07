@@ -1,0 +1,58 @@
+// $josefin: 'Josefin Sans', sans-serif;
+// $aleo: 'Aleo', serif;
+
+$transition: all 0.2s ease;
+
+
+%transform {
+    transform: scale(1.02);
+    transition: $transition;
+}
+
+%container-settings {
+    max-width: 1170px;
+    width: 100%;
+    height: 100%;
+    // padding: 0 15px;   
+}
+
+// %btn {
+//     background-color: #5474fd;
+//     color: #ffffff;
+//     text-transform: uppercase;
+//     border: 0;
+//     border-radius: 2px;
+//     font-family: $aleo;
+//     font-size: 14px;
+//     cursor: pointer;
+// }
+
+// %btn-a {
+//     background-color: #5474fd;
+//     border: 0;
+//     border-radius: 2px;   
+//     text-decoration: none;
+//     font-family: $aleo;
+//     font-size: 14px; 
+//     color: #ffffff;
+//     text-transform: uppercase;
+//     text-align: center;
+//     display: block;
+//     width: 225px;
+//     height: 60px;
+//     line-height: 60px;
+//     cursor: pointer;
+
+//     &:hover {
+//         @extend %transform;
+//     }
+// }
+
+// %a {
+//     text-decoration: none;
+//     font-family: $aleo;
+//     font-size: 14px; 
+//     color: #ffffff;
+//     text-transform: uppercase;
+//     cursor: pointer;
+// }

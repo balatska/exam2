@@ -1,0 +1,33 @@
+body {
+    margin: 0 auto;
+}
+
+.header-wrap {
+    width: 100%;
+    height: 800px;
+    background-image: url(../img/bg--header.png);
+    // background-color: aqua;
+
+    .container {
+        @extend %container-settings;
+    }
+}
+
+.header-inner {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: #ffffff;
+    text-transform: uppercase;
+
+    .menu {
+        display: flex;
+
+        ul {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+}
