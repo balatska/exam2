@@ -5,29 +5,184 @@ body {
 .header-wrap {
     width: 100%;
     height: 800px;
-    background-image: url(../img/bg--header.png);
-    // background-color: aqua;
+    color: $light;
+    text-transform: uppercase;
+    position: relative;
 
-    .container {
-        @extend %container-settings;
+    .menu {
+        position: absolute;
+        top: 0px;
+        left: calc(50% - 585px);
+        display: flex;
+        justify-content: space-between;
+        max-width: 1170px;
+        width: 100%;
+        margin-top: 53px;
+    
+        .logo {
+            width: 243px;
+            background-image: url(../img/header/logo.png);
+            background-repeat: no-repeat;
+            background-size: contain;
+    
+            a {
+                display: block;
+                height: 100%;
+                @extend %button-text;
+            }
+    
+            &:hover {
+                @extend %transform-for-large-blocks;
+            }
+        }
+    
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            max-width: 600px;
+            width: 100%;
+    
+            a {
+                @extend %a;
+                color: $light;
+                line-height: 58px;
+                // padding-left: 25px;
+                margin: 0 10px;
+                width: 100px;
+                text-align: center;
+                position: relative;
+    
+                &:hover {
+                    @extend %transform-for-small-blocks;
+                }
+    
+                &::before {
+                    @extend %dots;
+                    position: absolute;
+                    top: calc(50% - 6px);
+                    left: -5px;
+                }
+
+                &:nth-of-type(3)::before {
+                    left: 10px;
+                }
+    
+                &:hover::before {
+                    @extend %dots;
+                    background-color: $light;
+                    transition: $transition;
+                }
+            }
+        }
+    
+        .socials {
+            width: 160px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            
+            img:hover {
+                cursor: pointer;
+                @extend %transform-for-small-blocks;
+            }
+        }
+    }
+
+    .scroll {
+        position: absolute;
+        bottom: 50px;
+        left: calc(50% - 24px);
+        background-image: url(../img/header/scroll.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        display: block;
+        width: 48px;
+        height: 48px;
+
+        a {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+        
+        &:hover {
+            @extend %transform-for-small-blocks;
+        }
     }
 }
 
-.header-inner {
-    height: 100%;
+.header-slider {
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    color: #ffffff;
-    text-transform: uppercase;
+    height: 800px;
 
-    .menu {
+    .content {
+        width: 100%;
+        height: 800px;
         display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
 
-        ul {
-            display: flex;
-            justify-content: space-between;
+        &:first-of-type {
+            background-image: url(../img/header/bg1.png);
+            background-position: center;
+        }
+
+        &:nth-of-type(2) {
+            background-image: url(../img/header/bg2.png);
+            background-position: left;
+        }
+
+        &:nth-of-type(3) {
+            background-image: url(../img/header/bg3.png);
+            background-position: top;
+        }
+
+        &:nth-of-type(4) {
+            background-image: url(../img/header/bg4.png);
+            background-position: right;
+        }
+
+        &:nth-of-type(5) {
+            background-image: url(../img/header/bg5.png);
+            background-position: bottom;
+        }
+
+        h1 {
+            font-family: 'gotham-bold';
+            font-size: 80px;
+            margin: 0;
+            text-align: center;
+        }
+
+        h4 {
+            @extend %h4-text;
+            text-align: center;
+            letter-spacing: 4px;
+        }
+    }
+
+    .slick-dots {
+        bottom: 50%;
+        right: -47%;
+        transform: rotate(90deg);
+
+        li {
+            margin: 0 20px;
+
+            button:before {
+                content: "";
+                width: 10px;
+                height: 10px;
+                display: block;
+                border: 1px solid $light;
+                border-radius: 50%;
+                opacity: 1;
+            }
+
+            &.slick-active button:before {
+                    background-color: $light;
+            }
         }
     }
 }

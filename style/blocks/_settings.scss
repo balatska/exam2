@@ -1,10 +1,14 @@
-// $josefin: 'Josefin Sans', sans-serif;
-// $aleo: 'Aleo', serif;
+$transition: all 0.3s ease;
+$dark: #2c4058;
+$light: #ffffff;
 
-$transition: all 0.2s ease;
 
+%transform-for-small-blocks {
+    transform: scale(1.05);
+    transition: $transition;
+}
 
-%transform {
+%transform-for-large-blocks {
     transform: scale(1.02);
     transition: $transition;
 }
@@ -16,43 +20,93 @@ $transition: all 0.2s ease;
     // padding: 0 15px;   
 }
 
-// %btn {
-//     background-color: #5474fd;
-//     color: #ffffff;
-//     text-transform: uppercase;
-//     border: 0;
-//     border-radius: 2px;
-//     font-family: $aleo;
-//     font-size: 14px;
-//     cursor: pointer;
-// }
+%button-text {
+    font-family: 'gotham-book';
+    font-size: 14px;
+    text-transform: uppercase;
+}
 
-// %btn-a {
-//     background-color: #5474fd;
-//     border: 0;
-//     border-radius: 2px;   
-//     text-decoration: none;
-//     font-family: $aleo;
-//     font-size: 14px; 
-//     color: #ffffff;
-//     text-transform: uppercase;
-//     text-align: center;
-//     display: block;
-//     width: 225px;
-//     height: 60px;
-//     line-height: 60px;
-//     cursor: pointer;
+%h2-text {
+    font-family: 'gotham-bold';
+    font-size: 44px;
+    text-transform: uppercase;
+}
 
-//     &:hover {
-//         @extend %transform;
-//     }
-// }
+%h2-medium-text {
+    font-family: 'gotham-medium';
+    font-size: 44px;
+    text-transform: uppercase;
+}
 
-// %a {
-//     text-decoration: none;
-//     font-family: $aleo;
-//     font-size: 14px; 
-//     color: #ffffff;
-//     text-transform: uppercase;
-//     cursor: pointer;
-// }
+%h3-text {
+    font-family: 'gotham-book';
+    font-size: 22px;
+    text-transform: uppercase;
+}
+
+%h3-bold-text {
+    font-family: 'gotham-bold';
+    font-size: 22px;
+    text-transform: uppercase;
+}
+
+%h4-text {
+    font-family: 'gotham-book';
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+%open-sans {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+}
+
+%btn-a {
+    border: 1px solid $dark;   
+    text-decoration: none;
+    @extend %button-text;
+    color: $dark;
+    text-align: center;
+    display: block;
+    width: 190px;
+    height: 50px;
+    line-height: 50px;
+    cursor: pointer;
+
+    &:hover {
+        background-color: #e0eaf562;
+        border-radius: 3px;
+        @extend %transform-for-large-blocks;
+        z-index: 2;
+        box-shadow: 0 0 10px #808080af;
+    }
+}
+
+%a {
+    text-decoration: none;
+    // font-family: $aleo;
+    font-size: 14px; 
+    // color: $dark;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+%underline {
+    display: block;
+    content: "";
+    width: 100px;
+    border-bottom: 2px solid $dark;
+    position: absolute;
+    left: calc(50% - 50px);
+    top: -30px;
+}
+
+%dots {
+    content: "";
+    width: 10px;
+    height: 10px;
+    display: block;
+    border: 1px solid $light;
+    border-radius: 50%;
+    opacity: 1;
+}

@@ -1,7 +1,20 @@
 .what-we-do {
-    color: #000000;
-    font-size: 44px;
-    margin: 140px 0;
-    text-transform: uppercase;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    h2 {
+        color: $dark;
+        font-size: 44px;
+        margin: 140px 0 100px 0;
+        text-transform: uppercase;
+        text-align: center;
+        @extend %h2-text;
+        position: relative;
+
+        &::before {
+            @extend %underline;
+        }
+    }
 }
